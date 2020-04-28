@@ -63,6 +63,13 @@ func makeslice64(et *_type, len64, cap64 int64) unsafe.Pointer {
 	return makeslice(et, len, cap)
 }
 
+/*=========
+
+1. double: doublecap := newcap + newcap
+2. mallocgc array
+3.
+==========*/
+
 // growslice handles slice growth during append.
 // It is passed the slice element type, the old slice, and the desired new minimum capacity,
 // and it returns a new slice with at least that capacity, with the old data
